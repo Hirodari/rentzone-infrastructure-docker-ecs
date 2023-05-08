@@ -32,3 +32,6 @@ variable "env_filename" {}
 # ecs variables
 variable "container_image" {}
 variable "cpu_architecture" {}
+
+# route-53 variables
+variable "record_name" {}
