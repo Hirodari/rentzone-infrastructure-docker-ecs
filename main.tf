@@ -115,3 +115,11 @@ module "ecs" {
   application_sg_id           = module.security-group.application_sg_id
   alb_target_group_arn        = module.alb.alb_target_group_arn
 }
+
+#  create asg-ecs module
+module "asg-ecs" {
+  source       = "git@github.com:Hirodari/terraform-modules-docker-ecs.git//asg-ecs"
+  project_name = local.project_name
+  environment  = local.environment
+  ecs_service  = module.ecs.ecs_service
+}
